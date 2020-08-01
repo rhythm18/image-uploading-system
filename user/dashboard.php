@@ -74,7 +74,7 @@ include("inc/chkAuth.php");
 
 
 
-    <title>Be Technical- Dashboard</title>
+    <title>Dashboard</title>
 
 
 
