@@ -1,5 +1,5 @@
-<?php include ("inc/chkAuth.php");
-include ("../admin/inc/connect.php");
+<?php include ("inc/security.php");
+include ("inc/connect.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -16,7 +16,7 @@ include ("../admin/inc/connect.php");
     <meta property="og:url" content="http://pratikborsadiya.in/blog/vali-admin">
     <meta property="og:image" content="http://pratikborsadiya.in/blog/vali-admin/hero-social.png">
     <meta property="og:description" content="Vali is a responsive and free admin theme built with Bootstrap 4, SASS and PUG.js. It's fully customizable and modular.">
-    <title>View Document</title>
+    <title>BMS Admin -View Document</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -33,24 +33,10 @@ include ("../admin/inc/connect.php");
   </script>
   </head>
   <body class="app sidebar-mini">
-    <header class="app-header"><a class="app-header__logo" href="dashboard.php"><?php include("inc/company_name.php");?></a>
-
-     <a class="app-sidebar__toggle" href="#" data-toggle="sidebar" aria-label="Hide Sidebar"></a>
-
-      <ul class="app-nav">
-
-        <li class="dropdown"><a class="app-nav__item" href="#" data-toggle="dropdown" aria-label="Open Profile Menu"><i class="fa fa-user fa-lg"></i></a>
-          <ul class="dropdown-menu settings-menu dropdown-menu-right">
-            <li><a class="dropdown-item" href="logout.php"><i class="fa fa-sign-out fa-lg"></i> Logout</a></li>
-          </ul>
-        </li>
-      </ul>
-    </header>
-
+    <!-- Navbar-->
+    <?php include("inc/top_menu.php");?>
     <!-- Sidebar menu-->
-   <?php
-  include("inc/menu.php");
-  ?>
+    <?php include("inc/left_menu.php");?>
     <main class="app-content">
       <div class="app-title">
         <div>
@@ -59,7 +45,7 @@ include ("../admin/inc/connect.php");
         </div>
         <ul class="app-breadcrumb breadcrumb">
           <li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>
-          <li class="breadcrumb-item"><a href="manage_documents.php">Go Back</a></li>
+          <li class="breadcrumb-item"><a href="manage_doc.php">Manage Documents</a></li>
         </ul>
       </div>
       <div class="clearix"></div>

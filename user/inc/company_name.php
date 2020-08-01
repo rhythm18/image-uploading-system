@@ -1,5 +1,5 @@
 <?php
 
-$companyName="Be Technical";
+$companyName="Customer Portal";
 echo $companyName;
 ?>

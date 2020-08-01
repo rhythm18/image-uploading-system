@@ -74,14 +74,21 @@ if (isset($_POST['submit']))
 $title=mysqli_real_escape_string($conn,$_POST['title']);
 $details=mysqli_real_escape_string($conn,$_POST['details']);
 
+
 $dt=date("Y-m-d h:i:s");
 
 $n=rand(10,999999);
 
 $target_dir = "../uploads/";
 $target_file = $target_dir.$n."-".basename($_FILES["fileToUpload"]["name"]);
-$filename=$n."-".basename($_FILES["fileToUpload"]["name"]);
-
+if(basename($_FILES["fileToUpload"]["name"])=="")
+  {
+    $filename="";
+  }
+else
+  {
+    $filename=$n."-".basename($_FILES["fileToUpload"]["name"]);
+  }
     if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) 
       {
         echo "The image file ".basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";
@@ -89,14 +96,217 @@ $filename=$n."-".basename($_FILES["fileToUpload"]["name"]);
 
     else 
       {
-        echo "Sorry, there was an error uploading your file.";
+        echo "No img Uploaded";
       }
 
-  $sql="insert into documents (user_id,title,details,post_date,update_date,image,status) values ('$id','$title','$details','$dt','$dt','$filename','1')";
+
+$m=rand(10,999999);
+
+$target_dir = "../uploads/";
+$target_file = $target_dir.$m."-".basename($_FILES["fileToUpload2"]["name"]);
+if(basename($_FILES["fileToUpload2"]["name"])=="")
+  {
+    $filename2="";
+  }
+else
+  {
+    $filename2=$m."-".basename($_FILES["fileToUpload2"]["name"]);
+  }
+    if (move_uploaded_file($_FILES["fileToUpload2"]["tmp_name"], $target_file)) 
+      {
+        echo "The image file 2 ".basename( $_FILES["fileToUpload2"]["name"]). " has been uploaded.";
+      } 
+
+    else 
+      {
+        echo "No img Uploaded";
+      }
+
+      $o=rand(10,999999);
+
+$target_dir = "../uploads/";
+$target_file = $target_dir.$o."-".basename($_FILES["fileToUpload3"]["name"]);
+if(basename($_FILES["fileToUpload3"]["name"])=="")
+  {
+    $filename3="";
+  }
+else
+  {
+    $filename3=$o."-".basename($_FILES["fileToUpload3"]["name"]);
+  }
+    if (move_uploaded_file($_FILES["fileToUpload3"]["tmp_name"], $target_file)) 
+      {
+        echo "The image file 3 ".basename( $_FILES["fileToUpload3"]["name"]). " has been uploaded.";
+      } 
+
+    else 
+      {
+        echo "No img Uploaded";
+      }
+
+      $p=rand(10,999999);
+
+$target_dir = "../uploads/";
+$target_file = $target_dir.$p."-".basename($_FILES["fileToUpload4"]["name"]);
+if(basename($_FILES["fileToUpload4"]["name"])=="")
+  {
+    $filename4="";
+  }
+else
+  {
+    $filename4=$p."-".basename($_FILES["fileToUpload4"]["name"]);
+  }
+    if (move_uploaded_file($_FILES["fileToUpload4"]["tmp_name"], $target_file)) 
+      {
+        echo "The image file ".basename( $_FILES["fileToUpload4"]["name"]). " has been uploaded.";
+      } 
+
+    else 
+      {
+        echo "No img Uploaded";
+      }
+
+      $q=rand(10,999999);
+
+$target_dir = "../uploads/";
+$target_file = $target_dir.$q."-".basename($_FILES["fileToUpload5"]["name"]);
+if(basename($_FILES["fileToUpload5"]["name"])=="")
+  {
+    $filename5="";
+  }
+else
+  {
+    $filename5=$q."-".basename($_FILES["fileToUpload5"]["name"]);
+  }
+    if (move_uploaded_file($_FILES["fileToUpload5"]["tmp_name"], $target_file)) 
+      {
+        echo "The image file ".basename( $_FILES["fileToUpload5"]["name"]). " has been uploaded.";
+      } 
+
+    else 
+      {
+        echo "No img Uploaded";
+      }
+
+      $r=rand(10,999999);
+
+$target_dir = "../uploads/";
+$target_file = $target_dir.$r."-".basename($_FILES["fileToUpload6"]["name"]);
+if(basename($_FILES["fileToUpload6"]["name"])=="")
+  {
+    $filename6="";
+  }
+else
+  {
+    $filename6=$r."-".basename($_FILES["fileToUpload6"]["name"]);
+  }
+    if (move_uploaded_file($_FILES["fileToUpload6"]["tmp_name"], $target_file)) 
+      {
+        echo "The image file ".basename( $_FILES["fileToUpload6"]["name"]). " has been uploaded.";
+      } 
+
+    else 
+      {
+        echo "No img Uploaded";
+      }
+
+      $s=rand(10,999999);
+
+$target_dir = "../uploads/";
+$target_file = $target_dir.$s."-".basename($_FILES["fileToUpload7"]["name"]);
+if(basename($_FILES["fileToUpload7"]["name"])=="")
+  {
+    $filename7="";
+  }
+else
+  {
+    $filename7=$s."-".basename($_FILES["fileToUpload7"]["name"]);
+  }
+    if (move_uploaded_file($_FILES["fileToUpload7"]["tmp_name"], $target_file)) 
+      {
+        echo "The image file ".basename( $_FILES["fileToUpload7"]["name"]). " has been uploaded.";
+      } 
+
+    else 
+      {
+        echo "No img Uploaded";
+      }
+
+      $t=rand(10,999999);
+
+$target_dir = "../uploads/";
+$target_file = $target_dir.$t."-".basename($_FILES["fileToUpload8"]["name"]);
+if(basename($_FILES["fileToUpload8"]["name"])=="")
+  {
+    $filename8="";
+  }
+else
+  {
+    $filename8=$t."-".basename($_FILES["fileToUpload8"]["name"]);
+  }
+    if (move_uploaded_file($_FILES["fileToUpload8"]["tmp_name"], $target_file)) 
+      {
+        echo "The image file ".basename( $_FILES["fileToUpload8"]["name"]). " has been uploaded.";
+      } 
+
+    else 
+      {
+        echo "No img Uploaded";
+      }
+
+      $u=rand(10,999999);
+
+$target_dir = "../uploads/";
+$target_file = $target_dir.$u."-".basename($_FILES["fileToUpload9"]["name"]);
+if(basename($_FILES["fileToUpload9"]["name"])=="")
+  {
+    $filename9="";
+  }
+else
+  {
+    $filename9=$u."-".basename($_FILES["fileToUpload9"]["name"]);
+  }
+    if (move_uploaded_file($_FILES["fileToUpload9"]["tmp_name"], $target_file)) 
+      {
+        echo "The image file ".basename( $_FILES["fileToUpload9"]["name"]). " has been uploaded.";
+      } 
+
+    else 
+      {
+        echo "No img Uploaded";
+      }
+
+      $v=rand(10,999999);
+
+$target_dir = "../uploads/";
+$target_file = $target_dir.$v."-".basename($_FILES["fileToUpload10"]["name"]);
+if(basename($_FILES["fileToUpload10"]["name"])=="")
+  {
+    $filename10="";
+  }
+else
+  {
+    $filename10=$v."-".basename($_FILES["fileToUpload10"]["name"]);
+  }
+    if (move_uploaded_file($_FILES["fileToUpload10"]["tmp_name"], $target_file)) 
+      {
+        echo "The image file ".basename( $_FILES["fileToUpload10"]["name"]). " has been uploaded.";
+      } 
+
+    else 
+      {
+        echo "No img Uploaded";
+      }
+
+
+  $sql="insert into documents (user_id,title,details,post_date,update_date,image,image2,image3,image4,image5,image6,image7,image8,image9,image10,status) values ('$id','$title','$details','$dt','$dt','$filename','$filename2','$filename3','$filename4','$filename5','$filename6','$filename7','$filename8','$filename9','$filename10','1')";
   echo $sql;
 
     if (mysqli_query($conn,$sql))
       {
+        $sql="select email from users where user_id=".$id;
+        $email=ReturnAnyValue($conn,$sql);
+        include("doc_uploaded.php");
         gotopage("manage_documents.php");
       }
 
@@ -141,7 +351,68 @@ else
                   </div>
                 </div>
                 
-               
+                <div class="form-group row">
+                  <label class="control-label col-md-3">Image</label>
+                  <div class="col-md-8">
+                    <input class="form-control" type="file" name="fileToUpload2" id="fileToUpload2">
+                  </div>
+                </div>
+
+                 <div class="form-group row">
+                  <label class="control-label col-md-3">Image</label>
+                  <div class="col-md-8">
+                    <input class="form-control" type="file" name="fileToUpload3" id="fileToUpload3">
+                  </div>
+                </div>
+
+                 <div class="form-group row">
+                  <label class="control-label col-md-3">Image</label>
+                  <div class="col-md-8">
+                    <input class="form-control" type="file" name="fileToUpload4" id="fileToUpload4">
+                  </div>
+                </div>
+
+                 <div class="form-group row">
+                  <label class="control-label col-md-3">Image</label>
+                  <div class="col-md-8">
+                    <input class="form-control" type="file" name="fileToUpload5" id="fileToUpload5">
+                  </div>
+                </div>
+
+                 <div class="form-group row">
+                  <label class="control-label col-md-3">Image</label>
+                  <div class="col-md-8">
+                    <input class="form-control" type="file" name="fileToUpload6" id="fileToUpload6">
+                  </div>
+                </div>
+
+                 <div class="form-group row">
+                  <label class="control-label col-md-3">Image</label>
+                  <div class="col-md-8">
+                    <input class="form-control" type="file" name="fileToUpload7" id="fileToUpload7">
+                  </div>
+                </div>
+
+                 <div class="form-group row">
+                  <label class="control-label col-md-3">Image</label>
+                  <div class="col-md-8">
+                    <input class="form-control" type="file" name="fileToUpload8" id="fileToUpload8">
+                  </div>
+                </div>
+
+                 <div class="form-group row">
+                  <label class="control-label col-md-3">Image</label>
+                  <div class="col-md-8">
+                    <input class="form-control" type="file" name="fileToUpload9" id="fileToUpload9">
+                  </div>
+                </div>
+
+                 <div class="form-group row">
+                  <label class="control-label col-md-3">Image</label>
+                  <div class="col-md-8">
+                    <input class="form-control" type="file" name="fileToUpload10" id="fileToUpload10">
+                  </div>
+                </div>
             
             <div class="form-group row">
                   <div class="col-md-4 ">

@@ -16,7 +16,7 @@ include ("inc/connect.php");
     <meta property="og:url" content="http://pratikborsadiya.in/blog/vali-admin">
     <meta property="og:image" content="http://pratikborsadiya.in/blog/vali-admin/hero-social.png">
     <meta property="og:description" content="Vali is a responsive and free admin theme built with Bootstrap 4, SASS and PUG.js. It's fully customizable and modular.">
-    <title>BMS Admin - Dashboard</title>
+    <title>Admin</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -93,108 +93,19 @@ include ("inc/connect.php");
           </div>
         </div>
 
-         <div class="col-md-6 col-lg-3">
-          <div class="widget-small warning coloured-icon"><i class="icon fa fa-files-o fa-3x"></i>
-            <div class="info">
-              <h4>Category</h4>
-              <p><b>
-                <?php 
-                          $sql="select count(*) from category";
-                  ?>
-                          <a href="manage_category.php"><?php echo ReturnAnyValue($conn,$sql);?></a>
-
-              </b></p>
-            </div>
-          </div>
-        </div>
+        
 
 
 
         <div class="col-md-6 col-lg-3">
           <div class="widget-small warning coloured-icon"><i class="icon fa fa-files-o fa-3x"></i>
             <div class="info">
-              <h4>Total Blogs</h4>
+              <h4>Total Documents</h4>
               <p><b>
                 <?php 
-                          $sql="select count(*) from articles";
+                          $sql="select count(*) from documents";
                     ?>
-                              <a href="manage_article.php"><?php echo ReturnAnyValue($conn,$sql);?></a>
-
-              </b></p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-6 col-lg-3">
-          <div class="widget-small warning coloured-icon"><i class="icon fa fa-files-o fa-3x"></i>
-            <div class="info">
-              <h4>Blogs by admin</h4>
-              <p><b>
-                <?php 
-                          $sql="select count(*) from articles where user_id=0";
-                    ?>
-                              <a href="manage_article.php"><?php echo ReturnAnyValue($conn,$sql);?></a>
-
-              </b></p>
-            </div>
-          </div>
-        </div>
-
-         <div class="col-md-6 col-lg-3">
-          <div class="widget-small warning coloured-icon"><i class="icon fa fa-files-o fa-3x"></i>
-            <div class="info">
-              <h4>Blogs by users</h4>
-              <p><b>
-                <?php 
-                          $sql="select count(*) from articles where user_id>0";
-                    ?>
-                              <a href="manage_article.php"><?php echo ReturnAnyValue($conn,$sql);?></a>
-
-              </b></p>
-            </div>
-          </div>
-        </div>
-
-
-         <div class="col-md-6 col-lg-3">
-          <div class="widget-small warning coloured-icon"><i class="icon fa fa-files-o fa-3x"></i>
-            <div class="info">
-              <h4>Approved Blogs</h4>
-              <p><b>
-                <?php 
-                          $sql="select count(*) from articles where status=1 and user_id>0";
-                    ?>
-                              <a href="manage_article.php"><?php echo ReturnAnyValue($conn,$sql);?></a>
-
-              </b></p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-6 col-lg-3">
-          <div class="widget-small warning coloured-icon"><i class="icon fa fa-files-o fa-3x"></i>
-            <div class="info">
-              <h4>Pending Blogs</h4>
-              <p><b>
-                <?php 
-                          $sql="select count(*) from articles where status=2 and user_id>0";
-                    ?>
-                              <a href="manage_article.php"><?php echo ReturnAnyValue($conn,$sql);?></a>
-
-              </b></p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-6 col-lg-3">
-          <div class="widget-small warning coloured-icon"><i class="icon fa fa-files-o fa-3x"></i>
-            <div class="info">
-              <h4>Rejected Blogs</h4>
-              <p><b>
-                <?php 
-                          $sql="select count(*) from articles where status=0 and user_id>0";
-                    ?>
-                              <a href="manage_article.php"><?php echo ReturnAnyValue($conn,$sql);?></a>
+                              <a href="manage_doc.php"><?php echo ReturnAnyValue($conn,$sql);?></a>
 
               </b></p>
             </div>
@@ -202,68 +113,6 @@ include ("inc/connect.php");
         </div>
 
        
-
-        <div class="col-md-6 col-lg-3">
-          <div class="widget-small danger coloured-icon"><i class="icon fa fa-star fa-3x"></i>
-            <div class="info">
-              <h4>Approved Comments</h4>
-              <p><b>
-                <?php 
-                            $sql="SELECT COUNT(*) FROM `comments` where cmt_status=1";
-                  ?>
-                              <a href="manage_approved_comment.php"><?php echo ReturnAnyValue($conn,$sql);?></a>
-
-              </b></p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-6 col-lg-3">
-          <div class="widget-small danger coloured-icon"><i class="icon fa fa-star fa-3x"></i>
-            <div class="info">
-              <h4>Rejected comments</h4>
-              <p><b>
-                 <?php 
-                            $sql="SELECT COUNT(*) FROM `comments` where cmt_status=0";
-                  ?>
-                              <a href="manage_rejected_comment.php"><?php echo ReturnAnyValue($conn,$sql);?></a>
-
-              </b></p>
-            </div>
-          </div>
-        </div>
-
-
-       
-        <div class="col-md-6 col-lg-3">
-          <div class="widget-small danger coloured-icon"><i class="icon fa fa-star fa-3x"></i>
-            <div class="info">
-              <h4>Subscribers</h4>
-              <p><b>
-                <?php 
-                            $sql="select count(*) from subscribers where status=1";
-                  ?>
-                            <a href="manage_sub.php"><?php echo ReturnAnyValue($conn,$sql);?></a>
-
-              </b></p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-6 col-lg-3">
-          <div class="widget-small danger coloured-icon"><i class="icon fa fa-star fa-3x"></i>
-            <div class="info">
-              <h4>Unsubscribers</h4>
-              <p><b>
-                <?php 
-                            $sql="select count(*) from subscribers where status=0";
-                  ?>
-                            <a href="manage_unsub.php"><?php echo ReturnAnyValue($conn,$sql);?></a>
-
-              </b></p>
-            </div>
-          </div>
-        </div>
       </div>
       
     </main>

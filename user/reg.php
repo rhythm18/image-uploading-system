@@ -44,8 +44,7 @@ if(isset($_POST['submit']))
           { 
 
 
-              echo "<div class='alert alert-success bm-2'><b>Registration Complete !</b> Please verify your E-mail !</div>";
-
+                  header("Location:index.php");
                   //include("send_welcomeletter.php");
                   
          }
@@ -114,7 +113,7 @@ else
       
           <div class="form-group btn-container">
             <button class="btn btn-primary btn-block" name="submit"><i class="fa fa-sign-in fa-lg fa-fw"></i>SIGN UP</button>
-                  <a href="user_login.php">Already a Member? Sign in</a>
+                  <a href="index.php">Already a Member? Sign in</a>
 
         </form>
 

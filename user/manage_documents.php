@@ -117,7 +117,7 @@ if($row['status']==0)
                       <td><?php echo $i;?></td>
 
                       <td><a href="view_doc.php?id=<?php echo $row['doc_id'];?>"><?php echo $row['title'];?></a></td>
-                      <?php if ($row['image']!=null) {
+                      <?php if ($row['image']!="") {
                         ?>
                         <td><img src="../uploads/<?php echo $row['image'];?>" width="50" height="50"> </td>
                       <?php
@@ -138,6 +138,7 @@ if($row['status']==0)
 
                     </tr>
 <?php
+$i++;
 }
 ?>
                   </tbody>

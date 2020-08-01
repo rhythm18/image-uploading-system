@@ -85,12 +85,10 @@ include ("inc/connect.php");
                     <tr>
                       <th>Name</th>
                       <th>Email</th>
-                      <th>Mobile</th>
                       <th>Reg Date</th>
                       <th>Status</th>
                       <th>Action</th>
-                      <th>Subscription</th>
-                      <th>Verification</th>
+
                     </tr>
                   </thead>
                   <tbody>
@@ -105,44 +103,14 @@ else
   $sts="<a href=user_status.php?sts=1&uid=".$row['user_id'].">Activate</a>";
   ?>
                     <tr>
-                      <td><?php echo $row['first_name']." ".$row['last_name'];?></td>
+                      <td><?php echo $row['name'];?></td>
                       <td><?php echo $row['email'];?></td>
-                      <?php
-                      if($row['mobile']=="")
-                      {
-                        ?>
-                          <td><?php echo "NA";?></td>
-                          <?php
-                      }
-                      else
-                      {
-                        ?>
-                      <td><?php echo $row['mobile'];?></td>
-                      <?php
-                      }
-                      ?>
-                      <td><?php echo $row['created_at'];?></td>
+                     
+                      <td><?php echo $row['join_date'];?></td>
                        <td><?php echo $sts;?></td>
-                      <?php echo "<td>"."<a href=delete_user.php?id=".$row['user_id'].">Delete</a>"." | "."<a href=edit_user.php?id=".$row['user_id'].">Edit</a>"."</td>";?>
-<?php
-                      if ($row['sub_status']==1)  $s_sts="Subscribed";
-                      if ($row['sub_status']==0)  $s_sts="Not Subscribed";
-  ?>
-                                             <td><?php echo $s_sts;?></td>
-      <?php 
-                      if ($row['email_verify']==1) 
-                        {
-                          if($row['google_id']=="")
-                          {
-                            $mail="Verified";
-                          }
+                      <?php echo "<td>"."<a href=delete_user.php?id=".$row['user_id'].">Delete</a>"." | "."<a href=edit_user.php?id=".$row['user_id'].">Edit</a>"."</td>";
+                      ?>
 
-                          else
-                            $mail="Verified- Google";
-                        }
-                      if ($row['email_verify']==0)  $mail="Not Verified";
-      ?>
-                                        <td><?php echo $mail;?></td>
 
 
 
